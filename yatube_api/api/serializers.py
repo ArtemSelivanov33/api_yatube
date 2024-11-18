@@ -1,8 +1,9 @@
+from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from posts.models import Comment, Group, Post, User
-# User получен в моделях через get_user_model(), я просто оттуда импортировал.
-# Или надо получать в каждом файле через get_user_model()?
+from posts.models import Comment, Group, Post
+
+User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
